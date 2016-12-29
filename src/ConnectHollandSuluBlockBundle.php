@@ -13,12 +13,14 @@ class ConnectHollandSuluBlockBundle extends Bundle
      */
     public function boot()
     {
-        $stream = new Stream('sulu-block-bundle', [
-            'blocks' => __DIR__.'/Resources/templates/blocks/',
-            'properties' => __DIR__.'/Resources/templates/properties/',
-        ]);
+        if (is_null(StreamManager::getStream('sulu-block-bundle'))) {
+            $stream = new Stream('sulu-block-bundle', [
+                'blocks' => __DIR__.'/Resources/templates/blocks/',
+                'properties' => __DIR__.'/Resources/templates/properties/',
+            ]);
 
-        StreamManager::create()->registerStream($stream);
+            StreamManager::create()->registerStream($stream);
+        }
 
         parent::boot();
     }
