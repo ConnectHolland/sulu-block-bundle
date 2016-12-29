@@ -1,0 +1,12 @@
+{% extends 'ConnectHollandSuluBlockBundle:html5:base.html.twig' %}
+
+{% block section_content %}
+{% block title %}
+    {% include 'ConnectHollandSuluBlockBundle:html5:parts/title.html.twig' %}
+{% endblock %}
+{% block text %}
+    <div property='text'>
+        {{ block.text|raw }}
+    </div>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,6 @@
+{% set rel = (rel is defined) ? rel : 'blocks' %}
+{% block section %}
+<section class='block {{ block.type }}' rel='{{ rel }}' typeof='block'>
+    {% block section_content %}{% endblock %}
+<section>
+{% endblock %}

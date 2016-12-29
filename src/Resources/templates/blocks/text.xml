@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<type xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+
+    name="text"
+    >
+    <meta>
+        <title lang="en">Richtext</title>
+        <title lang="nl">Opgemaakte tekst</title>
+    </meta>
+    <properties>
+        <xi:include href='sulu-block-bundle://properties/title.xml'/>
+        <xi:include href='sulu-block-bundle://properties/text_editor.xml'/>
+    </properties>
+</type>

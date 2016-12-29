@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<property xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+
+    name="text"
+    type="text_editor">
+    <meta>
+        <title lang="en">Text</title>
+        <title lang="nl">Tekst</title>
+    </meta>
+
+    <params>
+        <param name="table" value="true"/>
+        <param name="link" value="true"/>
+        <param name="paste_from_word" value="true"/>
+        <param name="height" value="100"/>
+        <param name="max_height" value="200"/>
+        <param name="extra_allowed_content" value="img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]" />
+    </params>
+</property>
