@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<property xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+
+    name="youtube_identifier"
+    type="text_line"
+    >
+    <!-- In future should accept also video urls -->
+    <meta>
+        <title lang="en">Youtube id</title>
+        <title lang="nl">Youtube id</title>
+    </meta>
+</property>

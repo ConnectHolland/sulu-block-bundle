@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<property xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+
+    name="title"
+    type="text_line"
+
+    >
+    <meta>
+        <title lang="en">Title</title>
+        <title lang="nl">Titel</title>
+    </meta>
+</property>

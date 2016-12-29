@@ -1,0 +1,20 @@
+{% extends 'ConnectHollandSuluBlockBundle:html5:base.html.twig' %}
+
+{% block section_content %}
+{% block title %}
+    {% include 'ConnectHollandSuluBlockBundle:html5:parts/title.html.twig' %}
+{% endblock %}
+{% block video %}
+{# In future should accept also video urls and preproces them #}
+<iframe
+    src='https://www.youtube.com/embed/{{ block.youtube_identifier }}'
+    longdesc='www.youtube.com/watch?v={{ block.youtube_identifier }}'
+    frameborder='0'
+    allowfullscreen='true'
+    width='100%'
+    height='auto'
+    >
+    <a href='https://www.youtube.com/watch?v={{ block.youtube_identifier }}' target='_blank'>www.youtube.com/watch?v={{ block.youtube_identifier }}</a>
+</iframe>
+{% endblock %}
+{% endblock %}

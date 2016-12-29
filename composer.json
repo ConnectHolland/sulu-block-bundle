@@ -1,0 +1,24 @@
+{
+    "name": "connectholland/sulu-block-bundle",
+    "description": "A Symfony Bundle for Sulu content management platform containing boilerplate blocks",
+    "type": "library",
+    "require": {
+        "php": "^5.6 | ^7.0",
+        "niels-nijens/protocol-stream": "^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ConnectHolland\\Sulu\\BlockBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Reyo Stallenberg",
+            "email": "reyostallenberg@gmail.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    }
+}
