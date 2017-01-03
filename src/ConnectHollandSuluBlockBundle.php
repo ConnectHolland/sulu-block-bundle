@@ -13,7 +13,8 @@ class ConnectHollandSuluBlockBundle extends Bundle
      */
     public function boot()
     {
-        if (is_null(StreamManager::getStream('sulu-block-bundle'))) {
+        $streamManager = new StreamManager();
+        if (is_null($streamManager->getStream('sulu-block-bundle'))) {
             $stream = new Stream('sulu-block-bundle', [
                 'blocks' => __DIR__.'/Resources/templates/blocks/',
                 'properties' => __DIR__.'/Resources/templates/properties/',
