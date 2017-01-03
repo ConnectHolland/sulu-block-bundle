@@ -2,6 +2,6 @@
 <div class='images {{ blockview.images.displayOption }}' property='images'>
     {% set images = sulu_resolve_medias(images, request.locale) %}
     {% for image in images %}
-        <img src='{{ image.url }}' title='{{ image.title }}'/>
+        <img src='{{ image.url }}' title='{{ image.title }}' alt='{{ image.title }}'/>
     {% endfor %}
 </div>
