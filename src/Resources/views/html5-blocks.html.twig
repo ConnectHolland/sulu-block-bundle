@@ -2,7 +2,7 @@
 {% set element = (element is defined) ? element : 'main' %}
 
 <{{ element }} property='{{ collection }}' typeof='collection'>
-{% for block in content[collection] %}
-    {% include 'ConnectHollandSuluBlockBundle:html5:'~block.type~'.html.twig' with {block: block, rel: collection} %}
+{% for index,block in content[collection] %}
+    {% include 'ConnectHollandSuluBlockBundle:html5:'~block.type~'.html.twig' with {block: block, rel: collection, blockview: view[collection][index]} %}
 {% endfor %}
 </{{ element }}>

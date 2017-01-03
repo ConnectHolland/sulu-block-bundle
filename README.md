@@ -114,4 +114,5 @@ Add includes to your twig templates
 
 ## Available blocks
 - Text with title (text)
+- Images with a text (images_text)
 - Youtube video with title (youtube)
