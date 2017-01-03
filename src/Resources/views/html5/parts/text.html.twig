@@ -1,0 +1,4 @@
+{% set text = (text is defined) ? text : block.text %}
+<div class='text' property='text'>
+    {{ text|raw }}
+</div>
