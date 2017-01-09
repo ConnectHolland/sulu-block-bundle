@@ -1,19 +1,19 @@
 # Sulu block bundle
 A Symfony Bundle for Sulu content management platform containing boilerplate blocks
 
-## Installation
-**Composer**
+## 1. Installation
+###Composer
 ```bash
 composer require connectholland/sulu-block-bundle
 ```
-**Activation of the bundle**
+###Activation of the bundle
 Add the bundle class to `app/AbstractKernel.php` in the `registerBundles` function
 ```php
 new ConnectHolland\Sulu\BlockBundle\ConnectHollandSuluBlockBundle()
 ```
 
-## Usage
-**Template**
+## 2. Usage
+###Template
 Add or adjust a page template file (be aware of adding xmlns:xi="http://www.w3.org/2001/XInclude")
 ```xml
 <!-- app/Resources/templates/pages/default.xml -->
@@ -94,8 +94,7 @@ Add or adjust a page template file (be aware of adding xmlns:xi="http://www.w3.o
     </properties>
 </template>
 ```
-
-**Twig**
+###Twig
 Add includes to your twig templates
 ```twig
 {% block content %}
@@ -111,8 +110,28 @@ Add includes to your twig templates
     </div>
 {% endblock %}
 ```
+####Override twig templates
+Put twig templates with the same name as the ones you want to override in `app/Resources/ConnectHollandSuluBlockBundle`.
+So if you want to override `src/Resources/views/html5/parts/images.html.twig` of this bundle, you should create the file `app/Resources/ConnectHollandSuluBlockBundle/views/html5/parts/images.html.twig`.
 
-## Available blocks
+And if you only want to override certain blocks of the templates in this bundle, the best way is to register the path of the bundle in twig.paths setting and extend the templates using the chosen name for this path in the file as described above.
+```yml
+# app/config/config.yml
+# Twig Configuration
+twig:
+    # ...
+    paths:
+        '%kernel.root_dir%/../vendor/connectholland/sulu-block-bundle/src/Resources/views': ConnectHollandSuluBlockBundle
+```
+
+```twig
+{# app/Resources/ConnectHollandSuluBlockBundle/views/html5/parts/images.html.twig #}
+{% extends '@ConnectHollandSuluBlockBundle/html5/parts/images.html.twig' %}
+
+{% block image_source %}{{ image.thumbnails['50x50'] }}{% endblock %}
+```
+
+## 3. Available blocks
 - Text with title (text)
 - Images with title (images)
 - Images with title and text (images_text)
