@@ -3,6 +3,12 @@
 
 <{{ element }} property='{{ collection }}' typeof='collection'>
 {% for index,block in content[collection] %}
-    {% include 'ConnectHollandSuluBlockBundle:html5:'~block.type~'.html.twig' with {block: block, rel: collection, blockview: view[collection][index]} %}
+    {% include '@ConnectHollandSuluBlock/html5/'~block.type~'.html.twig'
+        with {
+            block: block,
+            rel: collection,
+            blockview: view[collection][index]
+        }
+    %}
 {% endfor %}
 </{{ element }}>
