@@ -23,6 +23,8 @@ class ConnectHollandSuluBlockBundle extends Bundle
             StreamManager::create()->registerStream($stream);
         }
 
+        $this->container->get('twig.loader')->addPath($this->getPath().'/Resources/views', 'sulu-block-bundle');
+
         parent::boot();
     }
 }
