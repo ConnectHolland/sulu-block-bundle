@@ -1,4 +1,4 @@
 {% set title = (block.title is defined) ? block.title : block.url %}
 {% if block.url is defined and block.url is not empty %}
-    <a href='{{ block.url }}' class='{% block button_link_class %}{% endblock %}' property='url'>{{ title }}</a>
+    <a href='{{ block.url }}' class='{% block link_class %}{% endblock %}' property='url'>{{ title }}</a>
 {% endif %}

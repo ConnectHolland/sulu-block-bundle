@@ -4,11 +4,11 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 
-    name="button_link"
+    name="link"
     >
     <meta>
-        <title lang="en">Button url</title>
-        <title lang="nl">Button link</title>
+        <title lang="en">Url</title>
+        <title lang="nl">Link</title>
     </meta>
     <properties>
         <xi:include href='sulu-block-bundle://properties/title.xml'/>
