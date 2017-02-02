@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<property xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+
+    name="url"
+    type="url"
+
+    >
+    <meta>
+        <title lang="en">URL</title>
+        <title lang="nl">Adres</title>
+    </meta>
+
+    <params>
+        <param name="schemes" type="collection">
+            <param name="http://"/>
+            <param name="https://"/>
+        </param>
+    </params>
+</property>

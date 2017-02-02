@@ -129,3 +129,4 @@ For example like this:
 - Images with title (images)
 - Images with title and text (images_text)
 - Youtube video with title (youtube)
+- Button with link (button_link)
