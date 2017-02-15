@@ -1,7 +1,7 @@
 {% set images = (images is defined) ? images : block.images %}
 {%- block images -%}
 <div class='images {{ blockview.images.displayOption }}' property='images'>
-    {% set images = sulu_resolve_medias(images, request.locale) %}
+    {% set images = sulu_resolve_medias(images, app.request.locale) %}
     {% for image in images %}
         {%- block image -%}
         <img
