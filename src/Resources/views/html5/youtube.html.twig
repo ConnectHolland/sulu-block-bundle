@@ -7,7 +7,7 @@
     {% block video %}
     {# In future should accept also video urls and preproces them #}
         {%- block video_frame -%}
-        <div class="video-wrapper">
+        <div class='embed-container'>
             <iframe
                 {% block video_frame_attributes %}
                 src='{% block video_frame_source %}https://www.youtube.com/embed/{{ block.youtube_identifier }}{% endblock %}'
