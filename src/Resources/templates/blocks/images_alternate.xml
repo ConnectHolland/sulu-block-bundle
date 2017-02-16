@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<type xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+
+    name="images"
+    >
+    <meta>
+        <title lang="en">Images alternate</title>
+        <title lang="nl">Afbeeldingen afwijkend</title>
+    </meta>
+    <properties>
+        <xi:include href='sulu-block-bundle://properties/title.xml'/>
+        <xi:include href='sulu-block-bundle://properties/images.xml'/>
+    </properties>
+</type>
