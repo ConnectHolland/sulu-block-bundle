@@ -1,5 +1,7 @@
 {% extends '@ConnectHollandSuluBlock/html5/base.html.twig' %}
-
+{% block additional_properties %}
+{% if block.additional_properties is defined %}{{ ' ' ~ block.additional_properties }}{% endif %}
+{% endblock %}
 {% block section_content %}
     {% block title %}
         {% include '@ConnectHollandSuluBlock/html5/parts/title.html.twig' %}

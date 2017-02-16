@@ -11,7 +11,13 @@
         <title lang="nl">Afbeeldingen</title>
     </meta>
     <properties>
+        <xi:include href='sulu-block-bundle://additional-block-properties/additional_properties_for_images.xml' parse="xml">
+            <xi:fallback>
+                <xi:include href='sulu-block-bundle://properties/fallback_additional_properties_for_images.xml'/>
+            </xi:fallback>
+        </xi:include>
         <xi:include href='sulu-block-bundle://properties/title.xml'/>
         <xi:include href='sulu-block-bundle://properties/images.xml'/>
     </properties>
+
 </type>
