@@ -13,5 +13,12 @@
     <properties>
         <xi:include href='sulu-block-bundle://properties/title.xml'/>
         <xi:include href='sulu-block-bundle://properties/youtube_identifier.xml'/>
+        <xi:include
+            href='sulu-block-bundle://app-properties/youtube.xml'
+            xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:property)'
+            parse='xml'
+        >
+            <xi:fallback/>
+        </xi:include>
     </properties>
 </type>

@@ -14,5 +14,12 @@
         <xi:include href='sulu-block-bundle://properties/title.xml'/>
         <xi:include href='sulu-block-bundle://properties/images.xml'/>
         <xi:include href='sulu-block-bundle://properties/text_editor.xml'/>
+        <xi:include
+            href='sulu-block-bundle://app-properties/images_text.xml'
+            xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:property)'
+            parse='xml'
+        >
+            <xi:fallback/>
+        </xi:include>
     </properties>
 </type>

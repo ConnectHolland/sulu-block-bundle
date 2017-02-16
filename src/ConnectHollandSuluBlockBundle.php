@@ -15,9 +15,11 @@ class ConnectHollandSuluBlockBundle extends Bundle
     {
         $streamManager = new StreamManager();
         if (is_null($streamManager->getStream('sulu-block-bundle'))) {
+            $rootDirectory = $this->container->get('kernel')->getRootDir();
             $stream = new Stream('sulu-block-bundle', [
                 'blocks' => __DIR__.'/Resources/templates/blocks/',
                 'properties' => __DIR__.'/Resources/templates/properties/',
+                'app-properties' => $rootDirectory.'/Resources/ConnectHollandSuluBlockBundle/templates/properties/',
             ]);
 
             StreamManager::create()->registerStream($stream);
