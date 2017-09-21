@@ -2,18 +2,18 @@
 A Symfony Bundle for Sulu content management platform containing boilerplate blocks
 
 ## 1. Installation
-###Composer
+### Composer
 ```bash
 composer require connectholland/sulu-block-bundle
 ```
-###Activation of the bundle
+### Activation of the bundle
 Add the bundle class to `app/AbstractKernel.php` in the `registerBundles` function
 ```php
 new ConnectHolland\Sulu\BlockBundle\ConnectHollandSuluBlockBundle()
 ```
 
 ## 2. Usage
-###Template
+### Template
 Add or adjust a page template file (be aware of adding xmlns:xi="http://www.w3.org/2001/XInclude")
 ```xml
 <!-- app/Resources/templates/pages/default.xml -->
@@ -94,7 +94,7 @@ Add or adjust a page template file (be aware of adding xmlns:xi="http://www.w3.o
     </properties>
 </template>
 ```
-###Twig
+### Twig
 Add includes to your twig templates
 ```twig
 {% block content %}
@@ -110,7 +110,7 @@ Add includes to your twig templates
     </div>
 {% endblock %}
 ```
-####Override twig templates
+#### Override twig templates
 Put twig templates with the same name as the ones you want to override in `app/Resources/ConnectHollandSuluBlockBundle`.
 So if you want to override `src/Resources/views/html5/parts/images.html.twig` of this bundle, you should create the file `app/Resources/ConnectHollandSuluBlockBundle/views/html5/parts/images.html.twig`.
 
