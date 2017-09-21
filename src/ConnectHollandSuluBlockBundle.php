@@ -18,6 +18,7 @@ class ConnectHollandSuluBlockBundle extends Bundle
             $stream = new Stream('sulu-block-bundle', [
                 'blocks' => __DIR__.'/Resources/templates/blocks/',
                 'properties' => __DIR__.'/Resources/templates/properties/',
+                'additional-block-properties' => __DIR__.'/../../../../app/Resources/additional-block-properties/',
             ]);
 
             StreamManager::create()->registerStream($stream);
