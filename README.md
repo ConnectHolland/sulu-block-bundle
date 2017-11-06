@@ -130,3 +130,23 @@ For example like this:
 - Images with title and text (images_text)
 - Youtube video with title (youtube)
 - Link with title (link)
+
+## 4. Adding additional properties
+When using a block and you want to add additional properties, you can configure them seperately in `app/Resources/ConnectHollandSuluBlockBundle/templates/properties/{blockname}.xml`.
+For instance, if you want to add a caption to the images block. You would create the following file in your client app:
+```xml
+<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/propreties/images.xml -->
+<?xml version='1.0' ?>
+<properties xmlns='http://schemas.sulu.io/template/template'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd'
+    >
+    <property name='caption' type='text_line'>
+        <meta>
+            <title lang='en'>Caption</title>
+            <title lang='nl'>Bijschrift</title>
+        </meta>
+    </property>
+</properties>
+```
+
