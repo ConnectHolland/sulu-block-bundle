@@ -135,7 +135,7 @@ For example like this:
 When using a block and you want to add additional properties, you can configure them seperately in `app/Resources/ConnectHollandSuluBlockBundle/templates/properties/{blockname}.xml`.
 For instance, if you want to add a caption to the images block. You would create the following file in your client app:
 ```xml
-<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/propreties/images.xml -->
+<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/properties/images.xml -->
 <?xml version='1.0' ?>
 <properties xmlns='http://schemas.sulu.io/template/template'
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
