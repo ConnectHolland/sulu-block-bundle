@@ -4,7 +4,8 @@
     "type": "library",
     "require": {
         "php": "^5.5 | ^5.6 | ^7.0",
-        "niels-nijens/protocol-stream": "^1.0"
+        "niels-nijens/protocol-stream": "^1.0",
+        "symfony/framework-bundle": "^3.3 || ^4.0"
     },
     "license": "MIT",
     "autoload": {
