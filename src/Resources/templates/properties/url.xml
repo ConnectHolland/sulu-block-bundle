@@ -13,14 +13,14 @@
     </meta>
 
     <xi:include
-            href='sulu-block-bundle://app-property-params/url_all.xml'
+            href='sulu-block-bundle://app-property-params/url.xml'
             xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params)'
             parse='xml'
     >
         <xi:fallback>
             <params>
                 <xi:include
-                        href='sulu-block-bundle://app-property-params/text_editor.xml'
+                        href='sulu-block-bundle://app-property-params/url_adjustments.xml'
                         xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param[@name="schemes"])'
                         parse='xml'
                 >
@@ -31,6 +31,13 @@
                             <param name="mailto:"/>
                         </param>
                     </xi:fallback>
+                </xi:include>
+                <xi:include
+                        href='sulu-block-bundle://app-property-params/url_additions.xml'
+                        xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param)'
+                        parse='xml'
+                >
+                    <xi:fallback/>
                 </xi:include>
             </params>
         </xi:fallback>

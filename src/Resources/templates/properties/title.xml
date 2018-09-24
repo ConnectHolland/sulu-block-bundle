@@ -11,4 +11,13 @@
         <title lang="en">Title</title>
         <title lang="nl">Titel</title>
     </meta>
+    <params>
+        <xi:include
+                href='sulu-block-bundle://app-property-params/title_additions.xml'
+                xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param)'
+                parse='xml'
+        >
+            <xi:fallback/>
+        </xi:include>
+    </params>
 </property>

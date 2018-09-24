@@ -150,28 +150,13 @@ For instance, if you want to add a caption to the images block. You would create
 </properties>
 ```
 
-## 5. Overloading property params
+## 5. Override params of a property
 
-### 5.1 Adjust params
-When using a block and you want to change the params of the blocks properties, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}.xml`.
-For instance, if you want to adjust the height and disable table functionality of the text_editor property. You would create the following file in your client app:
+### 5.1 Fully override all params
+When using a block and you want to choose all the params of the blocks properties yourself, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}.xml`.
+For instance, if you want to set all the params for the text editor property. You would create the following file in your client app:
 ```xml
 <!-- app/Resources/ConnectHollandSuluBlockBundle/templates/params/text_editor.xml -->
-<?xml version='1.0' ?>
-<params xmlns='http://schemas.sulu.io/template/template'
-    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-    xsi:schemaLocation='http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd'
-    >
-    <params name='height' type='200'/>
-    <params name='table' type='false'/>
-</params>
-```
-
-### 5.2 Full overload all params
-When using a block and you want to choose all the params of the blocks properties yourself, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}_all.xml`.
-For instance, if you want to adjust the height and disable table functionality of the text_editor property. You would create the following file in your client app:
-```xml
-<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/params/text_editor_all.xml -->
 <?xml version='1.0' ?>
 <params xmlns='http://schemas.sulu.io/template/template'
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
@@ -184,9 +169,24 @@ For instance, if you want to adjust the height and disable table functionality o
 </params>
 ```
 
+### 5.2 Adjust params
+When using a block and you want to change the params of the blocks properties, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}_adjustments.xml`.
+For instance, if you want to adjust the height and disable table functionality of the text_editor property. You would create the following file in your client app:
+```xml
+<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/params/text_editor_adjustments.xml -->
+<?xml version='1.0' ?>
+<params xmlns='http://schemas.sulu.io/template/template'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd'
+    >
+    <params name='height' type='200'/>
+    <params name='table' type='false'/>
+</params>
+```
+
 ### 5.2 Add params
 When using a block and you want to choose all the params of the blocks properties yourself, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}_additions.xml`.
-For instance, if you want to adjust the height and disable table functionality of the text_editor property. You would create the following file in your client app:
+For instance, if you want to add ui_color param to the text_editor property. You would create the following file in your client app:
 ```xml
 <!-- app/Resources/ConnectHollandSuluBlockBundle/templates/params/text_editor_additions.xml -->
 <?xml version='1.0' ?>

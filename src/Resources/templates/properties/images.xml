@@ -13,14 +13,14 @@
     </meta>
 
     <xi:include
-            href='sulu-block-bundle://app-property-params/images_all.xml'
+            href='sulu-block-bundle://app-property-params/images.xml'
             xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params)'
             parse='xml'
     >
         <xi:fallback>
             <params>
                 <xi:include
-                        href='sulu-block-bundle://app-property-params/text_editor.xml'
+                        href='sulu-block-bundle://app-property-params/images_adjustments.xml'
                         xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param[@name="types"])'
                         parse='xml'
                 >
@@ -29,7 +29,7 @@
                     </xi:fallback>
                 </xi:include>
                 <xi:include
-                        href='sulu-block-bundle://app-property-params/text_editor.xml'
+                        href='sulu-block-bundle://app-property-params/images_adjustments.xml'
                         xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param[@name="displayOptions"])'
                         parse='xml'
                 >
@@ -48,13 +48,20 @@
                     </xi:fallback>
                 </xi:include>
                 <xi:include
-                        href='sulu-block-bundle://app-property-params/text_editor.xml'
+                        href='sulu-block-bundle://app-property-params/images_adjustments.xml'
                         xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param[@name="defaultDisplayOption"])'
                         parse='xml'
                 >
                     <xi:fallback>
                         <param name="defaultDisplayOption" value="left"/>
                     </xi:fallback>
+                </xi:include>
+                <xi:include
+                        href='sulu-block-bundle://app-property-params/images_additions.xml'
+                        xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param)'
+                        parse='xml'
+                >
+                    <xi:fallback/>
                 </xi:include>
             </params>
         </xi:fallback>
