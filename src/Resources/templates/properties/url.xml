@@ -1,22 +1,38 @@
 <?xml version="1.0" ?>
 <property xmlns="http://schemas.sulu.io/template/template"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 
-    name="url"
-    type="url"
-
-    >
+          name="url"
+          type="url"
+>
     <meta>
         <title lang="en">URL</title>
         <title lang="nl">Adres</title>
     </meta>
 
-    <params>
-        <param name="schemes" type="collection">
-            <param name="http://"/>
-            <param name="https://"/>
-            <param name="mailto:"/>
-        </param>
-    </params>
+    <xi:include
+            href='sulu-block-bundle://app-property-params/url_all.xml'
+            xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params)'
+            parse='xml'
+    >
+        <xi:fallback>
+            <params>
+                <xi:include
+                        href='sulu-block-bundle://app-property-params/text_editor.xml'
+                        xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param[@name="schemes"])'
+                        parse='xml'
+                >
+                    <xi:fallback>
+                        <param name="schemes" type="collection">
+                            <param name="http://"/>
+                            <param name="https://"/>
+                            <param name="mailto:"/>
+                        </param>
+                    </xi:fallback>
+                </xi:include>
+            </params>
+        </xi:fallback>
+    </xi:include>
 </property>
