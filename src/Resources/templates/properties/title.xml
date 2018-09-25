@@ -1,14 +1,23 @@
 <?xml version="1.0" ?>
 <property xmlns="http://schemas.sulu.io/template/template"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 
-    name="title"
-    type="text_line"
-
-    >
+          name="title"
+          type="text_line"
+>
     <meta>
         <title lang="en">Title</title>
         <title lang="nl">Titel</title>
     </meta>
+    <params>
+        <xi:include
+                href='sulu-block-bundle://app-property-params/title_additions.xml'
+                xpointer='xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:params/sulu:param)'
+                parse='xml'
+        >
+            <xi:fallback/>
+        </xi:include>
+    </params>
 </property>
