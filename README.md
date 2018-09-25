@@ -184,8 +184,8 @@ For instance, if you want to adjust the height and disable table functionality o
 </params>
 ```
 
-### 5.2 Add params
-When using a block and you want to choose all the params of the blocks properties yourself, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}_additions.xml`.
+### 5.3 Add params
+When using a block and you want to add params to the blocks properties, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}_additions.xml`.
 For instance, if you want to add ui_color param to the text_editor property. You would create the following file in your client app:
 ```xml
 <!-- app/Resources/ConnectHollandSuluBlockBundle/templates/params/text_editor_additions.xml -->
