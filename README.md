@@ -179,8 +179,8 @@ For instance, if you want to adjust the height and disable table functionality o
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:schemaLocation='http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd'
     >
-    <params name='height' type='200'/>
-    <params name='table' type='false'/>
+    <param name="height" value="200"/>
+    <param name="table" value="false"/>
 </params>
 ```
 
