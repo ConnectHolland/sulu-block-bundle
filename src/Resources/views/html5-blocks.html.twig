@@ -1,8 +1,9 @@
 {% set collection = (collection is defined) ? collection : 'blocks' %}
 {% set element = (element is defined) ? element : 'main' %}
+{% set blocks = (blocks is defined) ? blocks : content[collection] %}
 
 <{{ element }} property='{{ collection }}' typeof='collection'>
-{% for index,block in content[collection] %}
+{% for index,block in blocks %}
     {% include '@ConnectHollandSuluBlock/html5/'~block.type~'.html.twig'
         with {
             block: block,
