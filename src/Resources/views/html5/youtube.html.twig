@@ -5,24 +5,8 @@
         {% include '@ConnectHollandSuluBlock/html5/parts/title.html.twig' %}
     {% endblock %}
     {% block video %}
-    {# In future should accept also video urls and preproces them #}
-        {%- block video_frame -%}
-        <div class='embed-container'>
-            <iframe
-                {% block video_frame_attributes %}
-                src='{% block video_frame_source %}https://www.youtube.com/embed/{{ block.youtube_identifier }}{% endblock %}'
-                longdesc='{% block video_frame_long_description %}www.youtube.com/watch?v={{ block.youtube_identifier }}{% endblock %}'
-                frameborder='{% block video_frame_border %}0{% endblock %}'
-                allowfullscreen='{% block video_frame_allow_fullscreen %}true{% endblock %}'
-                width='{% block video_frame_width %}100%{% endblock %}'
-                height='{% block video_frame_height %}auto{% endblock %}'
-                {% endblock %}
-                >
-                {% block video_link %}
-                <a href='https://www.youtube.com/watch?v={{ block.youtube_identifier }}' target='_blank'>www.youtube.com/watch?v={{ block.youtube_identifier }}</a>
-                {% endblock %}
-            </iframe>
-        </div>
-        {%- endblock -%}
+    {% block youtube %}
+        {% include '@ConnectHollandSuluBlock/html5/parts/youtube.html.twig' %}
+    {% endblock %}
     {% endblock %}
 {% endblock %}

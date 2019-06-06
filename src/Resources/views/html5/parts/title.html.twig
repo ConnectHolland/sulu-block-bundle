@@ -1,4 +1,6 @@
+{% set block_property = (block_property is defined) ? block_property : 'title' %}
 {% set element = (element is defined) ? element : 'h2' %}
-{% if block.title is defined and block.title is not empty %}
-    <{{ element }} property='title'>{{ block.title }}</{{ element }}>
+
+{% if block[block_property] is defined and block[block_property] is not empty %}
+    <{{ element }} property='{{ block_property }}'>{{ block[block_property] }}</{{ element }}>
 {% endif %}
