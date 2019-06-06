@@ -1,0 +1,23 @@
+{% set block_property = (block_property is defined) ? block_property : 'youtube_identifier' %}
+
+{%- block video_frame -%}
+    <div class='embed-container'>
+        <iframe
+            {% block video_frame_attributes %}
+            src='{% block video_frame_source %}https://www.youtube.com/embed/{{ block[block_property] }}{% endblock %}'
+            longdesc='{% block video_frame_long_description %}www.youtube.com/watch?v={{ block[block_property] }}{% endblock %}'
+            frameborder='{% block video_frame_border %}0{% endblock %}'
+            allowfullscreen='{% block video_frame_allow_fullscreen %}true{% endblock %}'
+            width='{% block video_frame_width %}100%{% endblock %}'
+            height='{% block video_frame_height %}auto{% endblock %}'
+            {% endblock %}
+        >
+            {% block video_link %}
+            <a
+                href='https://www.youtube.com/watch?v={{ block[block_property] }}'
+                target='_blank'
+            >www.youtube.com/watch?v={{ block[block_property] }}</a>
+            {% endblock %}
+        </iframe>
+    </div>
+{%- endblock -%}
