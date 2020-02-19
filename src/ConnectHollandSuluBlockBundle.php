@@ -16,8 +16,6 @@ class ConnectHollandSuluBlockBundle extends Bundle
     {
         $rootDirectory = $container->getParameter('kernel.root_dir');
         $this->registerStream($rootDirectory);
-
-        parent::build($container);
     }
 
     /**
@@ -25,8 +23,6 @@ class ConnectHollandSuluBlockBundle extends Bundle
      */
     public function boot()
     {
-        $rootDirectory = $this->container->get('kernel')->getRootDir();
-        $this->registerStream($rootDirectory);
         $this->container->get('twig')->getLoader()->addPath($this->getPath().'/Resources/views', 'sulu-block-bundle');
 
         parent::boot();
@@ -37,7 +33,7 @@ class ConnectHollandSuluBlockBundle extends Bundle
      *
      * @param string $rootDirectory
      */
-    public function registerStream($rootDirectory)
+    private function registerStream($rootDirectory)
     {
         $streamManager = new StreamManager();
         if (is_null($streamManager->getStream('sulu-block-bundle'))) {
