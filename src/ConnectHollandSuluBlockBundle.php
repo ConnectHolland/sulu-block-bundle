@@ -23,6 +23,8 @@ class ConnectHollandSuluBlockBundle extends Bundle
      */
     public function boot()
     {
+        $rootDirectory = $this->container->get('kernel')->getRootDir();
+        $this->registerStream($rootDirectory);
         $this->container->get('twig')->getLoader()->addPath($this->getPath().'/Resources/views', 'sulu-block-bundle');
 
         parent::boot();
