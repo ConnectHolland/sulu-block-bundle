@@ -3,13 +3,13 @@
     "description": "A Symfony Bundle for Sulu content management platform containing boilerplate blocks",
     "type": "library",
     "require": {
-        "php": "^7.2",
+        "php": "^7.1",
         "niels-nijens/protocol-stream": "^1.0",
         "symfony/dependency-injection": "^2.8 || ^3.4 || ^4.3 || ^5.0",
         "symfony/http-kernel": "^2.8 || ^3.4 || ^4.3 || ^5.0"
     },
     "require-dev": {
-        "maglnet/composer-require-checker": "^2.1"
+        "maglnet/composer-require-checker": "^2.0.0"
     },
     "license": "MIT",
     "autoload": {
