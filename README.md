@@ -6,11 +6,6 @@ A Symfony Bundle for Sulu content management platform containing boilerplate blo
 ```bash
 composer require connectholland/sulu-block-bundle
 ```
-### Activation of the bundle
-Add the bundle class to `app/AbstractKernel.php` in the `registerBundles` function
-```php
-new ConnectHolland\Sulu\BlockBundle\ConnectHollandSuluBlockBundle()
-```
 
 ## 2. Usage
 ### Template
@@ -105,21 +100,21 @@ Add includes to your twig templates
             {{ content.article|raw }}
         </div>
 
-        {% include 'ConnectHollandSuluBlockBundle::html5-blocks.html.twig' %}
-        {% include 'ConnectHollandSuluBlockBundle::html5-blocks.html.twig' with {element: 'aside', collection: 'banners'} %}
+        {% include '@ConnectHollandSuluBlock/html5-blocks.html.twig' %}
+        {% include '@ConnectHollandSuluBlock/html5-blocks.html.twig' with {element: 'aside', collection: 'banners'} %}
     </div>
 {% endblock %}
 ```
 #### Override twig templates
-Put twig templates with the same name as the ones you want to override in `app/Resources/ConnectHollandSuluBlockBundle`.
-So if you want to override `src/Resources/views/html5/parts/images.html.twig` of this bundle, you should create the file `app/Resources/ConnectHollandSuluBlockBundle/views/html5/parts/images.html.twig`.
+Put twig templates with the same name as the ones you want to override in `templates/bundles/ConnectHollandSuluBlockBundle`.
+So if you want to override `src/Resources/views/html5/parts/images.html.twig` of this bundle, you should create the file `templates/bundles/ConnectHollandSuluBlockBundle/html5/parts/images.html.twig`.
 
-And if you only want to override certain blocks of the templates in this bundle, you can extend the base template by using the namespace `@sulu-block-bundle`.
+And if you only want to override certain blocks of the templates in this bundle, you can extend the base template by using the namespace `@!ConnectHollandSuluBlock`.
 
 For example like this:
 ```twig
-{# app/Resources/ConnectHollandSuluBlockBundle/views/html5/parts/images.html.twig #}
-{% extends "@sulu-block-bundle/html5/parts/images.html.twig" %}
+{# templates/bundles/ConnectHollandSuluBlockBundle/html5/parts/images.html.twig #}
+{% extends "@!ConnectHollandSuluBlock/html5/parts/images.html.twig" %}
 
 {% block image_source %}{{ image.thumbnails['50x50'] }}{% endblock %}
 ```
@@ -132,10 +127,10 @@ For example like this:
 - Link with title (link)
 
 ## 4. Adding additional properties
-When using a block and you want to add additional properties, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/properties/{blockname}.xml`.
+When using a block and you want to add additional properties, you can configure them separately in `config/templates/ConnectHollandSuluBlockBundle/properties/{blockname}.xml`.
 For instance, if you want to add a caption to the images block. You would create the following file in your client app:
 ```xml
-<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/properties/images.xml -->
+<!-- config/templates/ConnectHollandSuluBlockBundle/properties/images.xml -->
 <?xml version='1.0' ?>
 <properties xmlns='http://schemas.sulu.io/template/template'
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
@@ -153,10 +148,10 @@ For instance, if you want to add a caption to the images block. You would create
 ## 5. Override params of a property
 
 ### 5.1 Fully override all params
-When using a block and you want to choose all the params of the blocks properties yourself, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}.xml`.
+When using a block and you want to choose all the params of the blocks properties yourself, you can configure them separately in `config/templates/ConnectHollandSuluBlockBundle/params/{blockname}.xml`.
 For instance, if you want to set all the params for the text editor property. You would create the following file in your client app:
 ```xml
-<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/params/text_editor.xml -->
+<!-- config/templates/ConnectHollandSuluBlockBundle/params/text_editor.xml -->
 <?xml version='1.0' ?>
 <params xmlns='http://schemas.sulu.io/template/template'
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
@@ -170,10 +165,10 @@ For instance, if you want to set all the params for the text editor property. Yo
 ```
 
 ### 5.2 Adjust params
-When using a block and you want to change the params of the blocks properties, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}_adjustments.xml`.
+When using a block and you want to change the params of the blocks properties, you can configure them separately in `config/templates/ConnectHollandSuluBlockBundle/params/{blockname}_adjustments.xml`.
 For instance, if you want to adjust the height and disable table functionality of the text_editor property. You would create the following file in your client app:
 ```xml
-<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/params/text_editor_adjustments.xml -->
+<!-- config/templates/ConnectHollandSuluBlockBundle/params/text_editor_adjustments.xml -->
 <?xml version='1.0' ?>
 <params xmlns='http://schemas.sulu.io/template/template'
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
@@ -185,10 +180,10 @@ For instance, if you want to adjust the height and disable table functionality o
 ```
 
 ### 5.3 Add params
-When using a block and you want to add params to the blocks properties, you can configure them separately in `app/Resources/ConnectHollandSuluBlockBundle/templates/params/{blockname}_additions.xml`.
+When using a block and you want to add params to the blocks properties, you can configure them separately in `config/templates/ConnectHollandSuluBlockBundle/params/{blockname}_additions.xml`.
 For instance, if you want to add ui_color param to the text_editor property. You would create the following file in your client app:
 ```xml
-<!-- app/Resources/ConnectHollandSuluBlockBundle/templates/params/text_editor_additions.xml -->
+<!-- config/templates/ConnectHollandSuluBlockBundle/params/text_editor_additions.xml -->
 <?xml version='1.0' ?>
 <params xmlns='http://schemas.sulu.io/template/template'
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
