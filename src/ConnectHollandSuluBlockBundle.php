@@ -14,7 +14,7 @@ class ConnectHollandSuluBlockBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
-        $rootDirectory = $container->getParameter('kernel.root_dir');
+        $rootDirectory = $container->getParameter('kernel.project_dir');
         $this->registerStream($rootDirectory);
     }
 
@@ -23,7 +23,7 @@ class ConnectHollandSuluBlockBundle extends Bundle
      */
     public function boot()
     {
-        $rootDirectory = $this->container->get('kernel')->getRootDir();
+        $rootDirectory = $this->container->get('kernel')->getProjectDir();
         $this->registerStream($rootDirectory);
         $this->container->get('twig')->getLoader()->addPath($this->getPath().'/Resources/views', 'sulu-block-bundle');
 
